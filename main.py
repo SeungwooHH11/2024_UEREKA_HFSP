@@ -88,12 +88,12 @@ if __name__ == '__main__':
 
     params = {
         "num_of_stages": 6,
-        "num_of_jobs": 40,
+        "num_of_jobs": 50,
         "max_time": 50,
-        "n_embedding": 256,
+        "n_embedding": 512,
         "n_hidden": 512,
         'machines_per_stage': [1, 1, 1, 1, 1, 1],
-        "step": 150001,
+        "step": 20000,
         "log_step": 10,
         "log_dir": log_dir,
         "save_step": 1000,

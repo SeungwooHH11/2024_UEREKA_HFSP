@@ -1,5 +1,6 @@
 # torch.autograd.set_detect_anomaly(True)
 import torch
+import vessl
 torch.backends.cudnn.benchmark = True
 from Simulator import *
 from Network import *
@@ -70,7 +71,7 @@ def train_model(params, log_path=None):
                 act_lr_scheduler.step()
             ave_act_loss += act_loss.item()
         if s%100==0:
-            print(real_makespan.mean().item())
+            vessl.log(step=s, payload={'ave_makespan':real_makespan.mean().item()})
         #ave_makespan += real_makespan.mean().item()
 
 

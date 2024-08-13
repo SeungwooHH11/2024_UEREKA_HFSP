@@ -37,8 +37,8 @@ def train_model(params, log_path=None):
     t1 = time()
     for s in range(1, params["step"]):
 
-        machines_per_stage = params['machines_per_stage']  # [1, 1, 1,1,1,1]
-        processing_times = generate_processing_times(params["batch_size"], params["num_of_jobs"],
+        machines_per_stage = params['machines_per_stage']  
+        processing_times = generate_processing_times(params["num_problem"],params["num_of_ep"], params["num_of_jobs"],
                                                      params['num_of_stages'], params['max_time'])
         pred_seq, ll_old, ps = act_model(processing_times.clone(), device)
 
@@ -99,7 +99,9 @@ if __name__ == '__main__':
         "log_dir": log_dir,
         "save_step": 1000,
         "model_dir": model_dir,
-        "batch_size": 128,
+        "num_problem": 8,
+        "num_of_ep":32,
+        "batch_size": 256,
 
         "init_min": -0.08,
         "init_max": 0.08,

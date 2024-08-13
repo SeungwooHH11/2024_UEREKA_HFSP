@@ -74,7 +74,7 @@ def plot_gantt_chart(jobs):
     plt.show()
 
 
-def generate_processing_times(num_batches, num_jobs, num_stages, max_time):
+def generate_processing_times(num_problem, num_of_ep , num_jobs, num_stages, max_time):
     """
     Generate random processing times for each job at each stage across multiple batches.
 
@@ -88,10 +88,11 @@ def generate_processing_times(num_batches, num_jobs, num_stages, max_time):
     list: A list of batches, where each batch is a list of lists containing random processing times for jobs
     """
     batches = []
-    for _ in range(num_batches):
+    for _ in range(num_problem):
         processing_times = []
         for _ in range(num_jobs):
             job_times = [random.randint(0, max_time) for _ in range(num_stages)]
             processing_times.append(job_times)
-        batches.append(processing_times)
+        for _ in range(num_of_ep)
+            batches.append(processing_times.copy())
     return torch.tensor(np.array(batches),dtype=torch.float32)

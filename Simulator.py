@@ -93,6 +93,6 @@ def generate_processing_times(num_problem, num_of_ep , num_jobs, num_stages, max
         for _ in range(num_jobs):
             job_times = [random.randint(0, max_time) for _ in range(num_stages)]
             processing_times.append(job_times)
-        for _ in range(num_of_ep)
+        for _ in range(num_of_ep):
             batches.append(processing_times.copy())
     return torch.tensor(np.array(batches),dtype=torch.float32)

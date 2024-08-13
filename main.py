@@ -93,7 +93,7 @@ if __name__ == '__main__':
         "max_time": 50,
         "n_embedding": 1024,
         "n_hidden": 512,
-        'machines_per_stage': [1, 1, 1, 1, 1, 1],
+        'machines_per_stage': [2, 3, 1, 2, 2, 4],
         "step": 150000,
         "log_step": 10,
         "log_dir": log_dir,
